@@ -20,8 +20,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(windowScene: currentScene)
         
-        let vc = UIViewController()
-        vc.view.backgroundColor = .red
+        let vc = SettingsViewController()
+//        vc.view.backgroundColor = .red
         window?.rootViewController = vc
         
         window?.makeKeyAndVisible()

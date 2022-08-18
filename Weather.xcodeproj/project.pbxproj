@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5146CBFC28ACB546005ED1FE /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5146CBFB28ACB546005ED1FE /* SettingsTableViewCell.swift */; };
+		5146CBFF28ACC0E8005ED1FE /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5146CBFE28ACC0E8005ED1FE /* UIViewExtension.swift */; };
+		5146CC0128ACC35F005ED1FE /* SettingsTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5146CC0028ACC35F005ED1FE /* SettingsTableViewCellViewModel.swift */; };
+		515809C528AC583E003363C4 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515809C428AC583E003363C4 /* SettingsViewController.swift */; };
+		515809C828AC5A35003363C4 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 515809C728AC5A35003363C4 /* SnapKit */; };
+		515809CA28AC5BA7003363C4 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515809C928AC5BA6003363C4 /* SettingsView.swift */; };
+		515809CC28AC5CFE003363C4 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515809CB28AC5CFE003363C4 /* SettingsViewModel.swift */; };
+		515809CE28AC5D82003363C4 /* CellIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515809CD28AC5D82003363C4 /* CellIdentifier.swift */; };
+		515809D228AC5E73003363C4 /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515809D128AC5E73003363C4 /* SettingsManager.swift */; };
+		51A436D428AEE9210064F168 /* SettingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A436D328AEE9210064F168 /* SettingData.swift */; };
+		51A436D628AEE94C0064F168 /* SettingsProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A436D528AEE94C0064F168 /* SettingsProperty.swift */; };
+		51A436D828AEF6210064F168 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A436D728AEF6210064F168 /* Color.swift */; };
+		51A436DA28AEF7590064F168 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A436D928AEF7590064F168 /* UIColorExtension.swift */; };
 		51A62AC528AAD8CE00283E47 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A62AC428AAD8CE00283E47 /* AppDelegate.swift */; };
 		51A62AC728AAD8CE00283E47 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A62AC628AAD8CE00283E47 /* SceneDelegate.swift */; };
 		51A62ACF28AAD8CE00283E47 /* Weather.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 51A62ACD28AAD8CE00283E47 /* Weather.xcdatamodeld */; };
@@ -15,6 +28,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5146CBFB28ACB546005ED1FE /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		5146CBFE28ACC0E8005ED1FE /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		5146CC0028ACC35F005ED1FE /* SettingsTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCellViewModel.swift; sourceTree = "<group>"; };
+		515809C428AC583E003363C4 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		515809C928AC5BA6003363C4 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		515809CB28AC5CFE003363C4 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		515809CD28AC5D82003363C4 /* CellIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellIdentifier.swift; sourceTree = "<group>"; };
+		515809D128AC5E73003363C4 /* SettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
+		51A436D328AEE9210064F168 /* SettingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingData.swift; sourceTree = "<group>"; };
+		51A436D528AEE94C0064F168 /* SettingsProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsProperty.swift; sourceTree = "<group>"; };
+		51A436D728AEF6210064F168 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		51A436D928AEF7590064F168 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		51A62AC128AAD8CE00283E47 /* Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51A62AC428AAD8CE00283E47 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		51A62AC628AAD8CE00283E47 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -29,12 +54,70 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				515809C828AC5A35003363C4 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5146CBFD28ACC0D6005ED1FE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5146CBFE28ACC0E8005ED1FE /* UIViewExtension.swift */,
+				51A436D928AEF7590064F168 /* UIColorExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		515809C028AC57F6003363C4 /* SettingsModule */ = {
+			isa = PBXGroup;
+			children = (
+				515809C128AC5800003363C4 /* Model */,
+				515809C228AC5805003363C4 /* View */,
+				515809C328AC5809003363C4 /* ViewModel */,
+			);
+			path = SettingsModule;
+			sourceTree = "<group>";
+		};
+		515809C128AC5800003363C4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				515809D128AC5E73003363C4 /* SettingsManager.swift */,
+				51A436D328AEE9210064F168 /* SettingData.swift */,
+				51A436D528AEE94C0064F168 /* SettingsProperty.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		515809C228AC5805003363C4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				515809C428AC583E003363C4 /* SettingsViewController.swift */,
+				515809C928AC5BA6003363C4 /* SettingsView.swift */,
+				5146CBFB28ACB546005ED1FE /* SettingsTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		515809C328AC5809003363C4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				515809CB28AC5CFE003363C4 /* SettingsViewModel.swift */,
+				5146CC0028ACC35F005ED1FE /* SettingsTableViewCellViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		515809D628AC5FE2003363C4 /* GlobalConstants */ = {
+			isa = PBXGroup;
+			children = (
+				515809CD28AC5D82003363C4 /* CellIdentifier.swift */,
+				51A436D728AEF6210064F168 /* Color.swift */,
+			);
+			path = GlobalConstants;
+			sourceTree = "<group>";
+		};
 		51A62AB828AAD8CE00283E47 = {
 			isa = PBXGroup;
 			children = (
@@ -54,6 +137,9 @@
 		51A62AC328AAD8CE00283E47 /* Weather */ = {
 			isa = PBXGroup;
 			children = (
+				5146CBFD28ACC0D6005ED1FE /* Extensions */,
+				515809D628AC5FE2003363C4 /* GlobalConstants */,
+				515809C028AC57F6003363C4 /* SettingsModule */,
 				51A62AC428AAD8CE00283E47 /* AppDelegate.swift */,
 				51A62AC628AAD8CE00283E47 /* SceneDelegate.swift */,
 				51A62AD028AAD8D100283E47 /* Assets.xcassets */,
@@ -80,6 +166,9 @@
 			dependencies = (
 			);
 			name = Weather;
+			packageProductDependencies = (
+				515809C728AC5A35003363C4 /* SnapKit */,
+			);
 			productName = Weather;
 			productReference = 51A62AC128AAD8CE00283E47 /* Weather.app */;
 			productType = "com.apple.product-type.application";
@@ -108,6 +197,9 @@
 				Base,
 			);
 			mainGroup = 51A62AB828AAD8CE00283E47;
+			packageReferences = (
+				515809C628AC5A35003363C4 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 51A62AC228AAD8CE00283E47 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -134,9 +226,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5146CBFF28ACC0E8005ED1FE /* UIViewExtension.swift in Sources */,
+				515809CA28AC5BA7003363C4 /* SettingsView.swift in Sources */,
+				51A436DA28AEF7590064F168 /* UIColorExtension.swift in Sources */,
 				51A62ACF28AAD8CE00283E47 /* Weather.xcdatamodeld in Sources */,
+				5146CBFC28ACB546005ED1FE /* SettingsTableViewCell.swift in Sources */,
+				51A436D628AEE94C0064F168 /* SettingsProperty.swift in Sources */,
+				51A436D428AEE9210064F168 /* SettingData.swift in Sources */,
+				515809CE28AC5D82003363C4 /* CellIdentifier.swift in Sources */,
 				51A62AC528AAD8CE00283E47 /* AppDelegate.swift in Sources */,
 				51A62AC728AAD8CE00283E47 /* SceneDelegate.swift in Sources */,
+				51A436D828AEF6210064F168 /* Color.swift in Sources */,
+				515809C528AC583E003363C4 /* SettingsViewController.swift in Sources */,
+				5146CC0128ACC35F005ED1FE /* SettingsTableViewCellViewModel.swift in Sources */,
+				515809CC28AC5CFE003363C4 /* SettingsViewModel.swift in Sources */,
+				515809D228AC5E73003363C4 /* SettingsManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +448,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		515809C628AC5A35003363C4 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		515809C728AC5A35003363C4 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 515809C628AC5A35003363C4 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		51A62ACD28AAD8CE00283E47 /* Weather.xcdatamodeld */ = {
