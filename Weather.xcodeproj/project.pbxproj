@@ -16,6 +16,8 @@
 		515809CC28AC5CFE003363C4 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515809CB28AC5CFE003363C4 /* SettingsViewModel.swift */; };
 		515809CE28AC5D82003363C4 /* CellIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515809CD28AC5D82003363C4 /* CellIdentifier.swift */; };
 		515809D228AC5E73003363C4 /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515809D128AC5E73003363C4 /* SettingsManager.swift */; };
+		518B5E1128B0355E001ECE42 /* OnboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B5E1028B0355E001ECE42 /* OnboardViewController.swift */; };
+		518B5E1328B03570001ECE42 /* OnboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B5E1228B03570001ECE42 /* OnboardView.swift */; };
 		51A436D428AEE9210064F168 /* SettingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A436D328AEE9210064F168 /* SettingData.swift */; };
 		51A436D628AEE94C0064F168 /* SettingsProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A436D528AEE94C0064F168 /* SettingsProperty.swift */; };
 		51A436D828AEF6210064F168 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A436D728AEF6210064F168 /* Color.swift */; };
@@ -36,6 +38,8 @@
 		515809CB28AC5CFE003363C4 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		515809CD28AC5D82003363C4 /* CellIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellIdentifier.swift; sourceTree = "<group>"; };
 		515809D128AC5E73003363C4 /* SettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
+		518B5E1028B0355E001ECE42 /* OnboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardViewController.swift; sourceTree = "<group>"; };
+		518B5E1228B03570001ECE42 /* OnboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardView.swift; sourceTree = "<group>"; };
 		51A436D328AEE9210064F168 /* SettingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingData.swift; sourceTree = "<group>"; };
 		51A436D528AEE94C0064F168 /* SettingsProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsProperty.swift; sourceTree = "<group>"; };
 		51A436D728AEF6210064F168 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
@@ -118,6 +122,39 @@
 			path = GlobalConstants;
 			sourceTree = "<group>";
 		};
+		518B5E0C28B0352F001ECE42 /* OnboardModule */ = {
+			isa = PBXGroup;
+			children = (
+				518B5E0D28B0353A001ECE42 /* Model */,
+				518B5E0E28B0353E001ECE42 /* View */,
+				518B5E0F28B03543001ECE42 /* ViewModel */,
+			);
+			path = OnboardModule;
+			sourceTree = "<group>";
+		};
+		518B5E0D28B0353A001ECE42 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		518B5E0E28B0353E001ECE42 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				518B5E1028B0355E001ECE42 /* OnboardViewController.swift */,
+				518B5E1228B03570001ECE42 /* OnboardView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		518B5E0F28B03543001ECE42 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		51A62AB828AAD8CE00283E47 = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +174,7 @@
 		51A62AC328AAD8CE00283E47 /* Weather */ = {
 			isa = PBXGroup;
 			children = (
+				518B5E0C28B0352F001ECE42 /* OnboardModule */,
 				5146CBFD28ACC0D6005ED1FE /* Extensions */,
 				515809D628AC5FE2003363C4 /* GlobalConstants */,
 				515809C028AC57F6003363C4 /* SettingsModule */,
@@ -228,6 +266,7 @@
 			files = (
 				5146CBFF28ACC0E8005ED1FE /* UIViewExtension.swift in Sources */,
 				515809CA28AC5BA7003363C4 /* SettingsView.swift in Sources */,
+				518B5E1328B03570001ECE42 /* OnboardView.swift in Sources */,
 				51A436DA28AEF7590064F168 /* UIColorExtension.swift in Sources */,
 				51A62ACF28AAD8CE00283E47 /* Weather.xcdatamodeld in Sources */,
 				5146CBFC28ACB546005ED1FE /* SettingsTableViewCell.swift in Sources */,
@@ -236,6 +275,7 @@
 				515809CE28AC5D82003363C4 /* CellIdentifier.swift in Sources */,
 				51A62AC528AAD8CE00283E47 /* AppDelegate.swift in Sources */,
 				51A62AC728AAD8CE00283E47 /* SceneDelegate.swift in Sources */,
+				518B5E1128B0355E001ECE42 /* OnboardViewController.swift in Sources */,
 				51A436D828AEF6210064F168 /* Color.swift in Sources */,
 				515809C528AC583E003363C4 /* SettingsViewController.swift in Sources */,
 				5146CC0128ACC35F005ED1FE /* SettingsTableViewCellViewModel.swift in Sources */,
