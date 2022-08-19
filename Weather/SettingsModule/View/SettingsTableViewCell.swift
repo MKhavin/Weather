@@ -53,7 +53,8 @@ class SettingsTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        addSubviews([
+        backgroundColor = .clear
+        contentView.addSubviews([
             titleLabel,
             valueSegmentedControl
         ])
@@ -81,6 +82,11 @@ class SettingsTableViewCell: UITableViewCell {
     func configureCell(by index: Int) {
         viewModel = SettingsTableViewCellViewModel()
         viewModel.loadViewData(by: index)
+    }
+    
+    func setSettingsNewValue() {
+        let value = valueSegmentedControl.selectedSegmentIndex
+        viewModel.setSettings(newValue: value)
     }
 }
 

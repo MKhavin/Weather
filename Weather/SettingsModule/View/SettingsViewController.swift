@@ -14,6 +14,9 @@ final class SettingsViewController: UIViewController {
         let view = SettingsView()
         view.settingsTableView.delegate = self
         view.settingsTableView.dataSource = self
+        view.setUpButton.addTarget(self,
+                                   action: #selector(setUpButtonPressed),
+                                   for: .touchUpInside)
         view.layer.cornerRadius = 10
         return view
     }()
@@ -23,7 +26,10 @@ final class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        print(FileManager.default.temporaryDirectory)
         // Do any additional setup after loading the view.
+        viewModel = SettingsViewModel()
+        
         setRootViewBackground()
         
         view.addSubview(settingsView)
@@ -43,7 +49,6 @@ final class SettingsViewController: UIViewController {
     
     private func setSubviewsLayout() {
         settingsView.snp.makeConstraints { make in
-//            make.centerY.equalTo(view.safeAreaLayoutGuide.snp.centerY)
             make.centerY.centerX.equalTo(view.safeAreaLayoutGuide)
             make.width.equalTo(view.frame.width / 1.3)
             make.height.equalTo(view.frame.height / 2)
@@ -58,11 +63,40 @@ final class SettingsViewController: UIViewController {
         
         super.updateViewConstraints()
     }
+    
+    @objc private func setUpButtonPressed(_ sender: UIButton) {
+        viewModel.saveSettings {
+            let alert = UIAlertController(title: "Settings",
+                                          message: "Settings succesfully saved",
+                                          preferredStyle: .alert)
+            
+            let action = UIAlertAction(title: "Ok", style: .default) { action in
+                self.dismiss(animated: true)
+            }
+            
+            alert.addAction(action)
+            
+            self.present(alert, animated: true)
+        }
+    }
+    
+    @objc private func cellValueChanged(_ sender: UISegmentedControl) {
+        var superview = sender.superview
+        while let view = superview, !(view is UITableViewCell) {
+            superview = view.superview
+        }
+        
+        guard let cell = superview as? SettingsTableViewCell else {
+            return
+        }
+        
+        cell.setSettingsNewValue()
+    }
 }
 
 extension SettingsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        4
+        viewModel.numberOfRowsInSection()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -75,28 +109,14 @@ extension SettingsViewController: UITableViewDataSource {
         }
         
         currentCell.configureCell(by: indexPath.row)
+        currentCell.valueSegmentedControl.addTarget(self,
+                                                    action: #selector(cellValueChanged),
+                                                    for: .valueChanged)
         return currentCell
-    }
-    
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        "Settings"
     }
 }
 
 extension SettingsViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        
-        guard let currentView = view as? UITableViewHeaderFooterView else {
-            return
-        }
-        
-        currentView.textLabel?.textColor = .black
-        currentView.textLabel?.font = .boldSystemFont(ofSize: 20)
-    }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        20
-    }
 }
 
 

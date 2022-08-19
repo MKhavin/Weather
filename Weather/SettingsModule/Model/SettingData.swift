@@ -14,7 +14,7 @@ struct SettingData {
         let value = SettingsManager.shared.getValue(of: setting)
         
         if let unwrappedValue = value {
-            return values.firstIndex(of: unwrappedValue.rawValue) ?? 0
+            return values.firstIndex(of: unwrappedValue) ?? 0
         } else {
             return 0
         }

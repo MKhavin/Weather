@@ -8,12 +8,17 @@
 import Foundation
 
 protocol SettingsViewModelProtocol {
-    func numberOfRowsInSection()
-    
+    func numberOfRowsInSection() -> Int
+    func saveSettings(completion: (() -> Void)?)
 }
 
 class SettingsViewModel: SettingsViewModelProtocol {
-    func numberOfRowsInSection() {
-        
+    func saveSettings(completion: (() -> Void)?) {
+        SettingsManager.shared.saveSettings()
+        completion?()
+    }
+    
+    func numberOfRowsInSection() -> Int {
+        SettingsProperty.allCases.count
     }
 }

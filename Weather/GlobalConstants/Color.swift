@@ -11,4 +11,5 @@ enum Color {
     static let blueBackground = UIColor(red: 254, green: 237, blue: 233)
     static let selectedSegmentTintColor = UIColor(red: 31, green: 77, blue: 197)
     static let buttonColor = UIColor(red: 242, green: 110, blue: 17)
+    static let settingsBackgroundColor = UIColor(red: 233, green: 238, blue: 250)
 }
