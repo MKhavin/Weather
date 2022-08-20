@@ -8,8 +8,11 @@
 import UIKit
 
 class OnboardViewController: UIViewController {
+    //MARK: - Sub properties
     private weak var rootView: OnboardView?
-    
+    var viewModel: OnboardViewModelProtocol!
+   
+    //MARK: - Life cycle methods
     override func loadView() {
         let rootView = OnboardView()
         self.rootView = rootView
@@ -20,5 +23,22 @@ class OnboardViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        viewModel = OnboardViewModel(manager: LocationManager())
+        setButtonActions()
+    }
+    
+    //MARK: - Sub methods
+    private func setButtonActions() {
+        rootView?.grantLocationButton.addTarget(self, action: #selector(grantButtonPressed), for: .touchUpInside)
+        rootView?.disableLocationButton.addTarget(self, action: #selector(disableLocationButtonPressed), for: .touchUpInside)
+    }
+    
+    //MARK: - Actions
+    @objc private func grantButtonPressed(_ sender: UIButton) {
+        viewModel.requestLocationAuthorization()
+    }
+    
+    @objc private func disableLocationButtonPressed(_ sender: UIButton) {
+        viewModel.dismissView()
     }
 }

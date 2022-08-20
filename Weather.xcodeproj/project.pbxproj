@@ -16,6 +16,10 @@
 		515809CC28AC5CFE003363C4 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515809CB28AC5CFE003363C4 /* SettingsViewModel.swift */; };
 		515809CE28AC5D82003363C4 /* CellIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515809CD28AC5D82003363C4 /* CellIdentifier.swift */; };
 		515809D228AC5E73003363C4 /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515809D128AC5E73003363C4 /* SettingsManager.swift */; };
+		5184E87628B15FF7006B93AC /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5184E87528B15FF7006B93AC /* LocationManager.swift */; };
+		5184E87828B16046006B93AC /* OnboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5184E87728B16046006B93AC /* OnboardViewModel.swift */; };
+		5184E87A28B18127006B93AC /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5184E87928B18127006B93AC /* UIFontExtension.swift */; };
+		5184E87C28B18CBE006B93AC /* OnboardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5184E87B28B18CBD006B93AC /* OnboardButton.swift */; };
 		518B5E1128B0355E001ECE42 /* OnboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B5E1028B0355E001ECE42 /* OnboardViewController.swift */; };
 		518B5E1328B03570001ECE42 /* OnboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B5E1228B03570001ECE42 /* OnboardView.swift */; };
 		51A436D428AEE9210064F168 /* SettingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A436D328AEE9210064F168 /* SettingData.swift */; };
@@ -38,6 +42,10 @@
 		515809CB28AC5CFE003363C4 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		515809CD28AC5D82003363C4 /* CellIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellIdentifier.swift; sourceTree = "<group>"; };
 		515809D128AC5E73003363C4 /* SettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
+		5184E87528B15FF7006B93AC /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		5184E87728B16046006B93AC /* OnboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardViewModel.swift; sourceTree = "<group>"; };
+		5184E87928B18127006B93AC /* UIFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
+		5184E87B28B18CBD006B93AC /* OnboardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardButton.swift; sourceTree = "<group>"; };
 		518B5E1028B0355E001ECE42 /* OnboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardViewController.swift; sourceTree = "<group>"; };
 		518B5E1228B03570001ECE42 /* OnboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardView.swift; sourceTree = "<group>"; };
 		51A436D328AEE9210064F168 /* SettingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingData.swift; sourceTree = "<group>"; };
@@ -70,6 +78,7 @@
 			children = (
 				5146CBFE28ACC0E8005ED1FE /* UIViewExtension.swift */,
 				51A436D928AEF7590064F168 /* UIColorExtension.swift */,
+				5184E87928B18127006B93AC /* UIFontExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -135,6 +144,7 @@
 		518B5E0D28B0353A001ECE42 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5184E87528B15FF7006B93AC /* LocationManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -144,6 +154,7 @@
 			children = (
 				518B5E1028B0355E001ECE42 /* OnboardViewController.swift */,
 				518B5E1228B03570001ECE42 /* OnboardView.swift */,
+				5184E87B28B18CBD006B93AC /* OnboardButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -151,6 +162,7 @@
 		518B5E0F28B03543001ECE42 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				5184E87728B16046006B93AC /* OnboardViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -270,15 +282,19 @@
 				51A436DA28AEF7590064F168 /* UIColorExtension.swift in Sources */,
 				51A62ACF28AAD8CE00283E47 /* Weather.xcdatamodeld in Sources */,
 				5146CBFC28ACB546005ED1FE /* SettingsTableViewCell.swift in Sources */,
+				5184E87A28B18127006B93AC /* UIFontExtension.swift in Sources */,
 				51A436D628AEE94C0064F168 /* SettingsProperty.swift in Sources */,
 				51A436D428AEE9210064F168 /* SettingData.swift in Sources */,
+				5184E87628B15FF7006B93AC /* LocationManager.swift in Sources */,
 				515809CE28AC5D82003363C4 /* CellIdentifier.swift in Sources */,
 				51A62AC528AAD8CE00283E47 /* AppDelegate.swift in Sources */,
+				5184E87C28B18CBE006B93AC /* OnboardButton.swift in Sources */,
 				51A62AC728AAD8CE00283E47 /* SceneDelegate.swift in Sources */,
 				518B5E1128B0355E001ECE42 /* OnboardViewController.swift in Sources */,
 				51A436D828AEF6210064F168 /* Color.swift in Sources */,
 				515809C528AC583E003363C4 /* SettingsViewController.swift in Sources */,
 				5146CC0128ACC35F005ED1FE /* SettingsTableViewCellViewModel.swift in Sources */,
+				5184E87828B16046006B93AC /* OnboardViewModel.swift in Sources */,
 				515809CC28AC5CFE003363C4 /* SettingsViewModel.swift in Sources */,
 				515809D228AC5E73003363C4 /* SettingsManager.swift in Sources */,
 			);
@@ -422,9 +438,11 @@
 				DEVELOPMENT_TEAM = F26DHS538R;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Weather/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Location is needed for getting weather for your current location.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -449,9 +467,11 @@
 				DEVELOPMENT_TEAM = F26DHS538R;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Weather/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Location is needed for getting weather for your current location.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

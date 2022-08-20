@@ -10,56 +10,59 @@ import SnapKit
 import SwiftUI
 
 class OnboardView: UIView {
-    
+    //MARK: - UI elements
     private lazy var onboardImage: UIImageView = {
         let view = UIImageView(image: UIImage(named: "OnboardImage"))
         view.contentMode = .scaleAspectFit
         return view
     }()
     
-    lazy var grantLocationButton: UIButton = {
-        let button = UIButton()
+    lazy var grantLocationButton: OnboardButton = {
+        let button = OnboardButton()
         button.setTitle("USE DEVICE LOCATION", for: .normal)
         button.backgroundColor = Color.buttonColor
-        button.tintColor = .white
-        button.contentHorizontalAlignment = .center
         button.layer.cornerRadius = 10
+        button.titleLabel?.font = disableLocationButton.titleLabel?.font
         return button
     }()
     
-    lazy var disableLocationButton: UIButton = {
-        let button = UIButton()
+    lazy var disableLocationButton: OnboardButton = {
+        let button = OnboardButton()
         button.setTitle("NO, I'LL MANUALLY ADD LOCATION", for: .normal)
-        button.tintColor = .white
-        button.contentHorizontalAlignment = .trailing
         return button
     }()
     
     private lazy var descritionLabel: UILabel = {
         let view = UILabel()
         
-        let titleString = "Grant to Weather app user your location data from your device\n\n\n\n"
+        // Attributed string
+        let titleString = "Grant to Weather app user your location data from your device\n\n"
         let titleAttributes: [NSAttributedString.Key: Any] = [
-            .font: UIFont.systemFont(ofSize: 16, weight: .semibold),
+            .font: UIFont.preferredFont(forTextStyle: .title2).withWeight(.semibold),
             .foregroundColor: UIColor.white
         ]
         let attributedTitleString = NSMutableAttributedString(string: titleString, attributes: titleAttributes)
         
         let descriptionString = "For more accurate weather data, while you driving or you journey\n\nYou can change your decision from app menu."
         let descriptionAttributes: [NSAttributedString.Key: Any] = [
-            .font: UIFont.systemFont(ofSize: 14, weight: .regular),
+            .font: UIFont.preferredFont(forTextStyle: .body),
             .foregroundColor: UIColor.white
         ]
         let attributedDescriptionString = NSAttributedString(string: descriptionString, attributes: descriptionAttributes)
         
         attributedTitleString.append(attributedDescriptionString)
+        //
         
         view.attributedText = attributedTitleString
         view.textAlignment = .center
         view.numberOfLines = 0
+        view.adjustsFontSizeToFitWidth = true
+        view.minimumScaleFactor = 0.2
         return view
     }()
+    //
 
+    //MARK: - Life cycle
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -79,16 +82,17 @@ class OnboardView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    //MARK: - Sub properties
     private func setSubviewsLayout() {
         onboardImage.snp.makeConstraints { make in
             make.centerX.equalTo(safeAreaLayoutGuide)
-            make.top.equalTo(layoutMarginsGuide).inset(100)
-            make.top.leading.trailing.equalTo(layoutMarginsGuide).inset(100)
-            make.height.equalTo(180)
+            make.top.equalTo(safeAreaLayoutGuide).offset(20)
+            make.leading.trailing.equalTo(safeAreaLayoutGuide).offset(20)
+            make.height.equalTo(UIScreen.main.bounds.height / 3)
         }
         
         disableLocationButton.snp.makeConstraints { make in
-            make.bottom.equalTo(layoutMarginsGuide).inset(70)
+            make.bottom.equalTo(layoutMarginsGuide).offset(-40)
             make.leading.trailing.equalTo(layoutMarginsGuide)
             make.height.equalTo(40)
         }
@@ -100,15 +104,14 @@ class OnboardView: UIView {
         }
         
         descritionLabel.snp.makeConstraints { make in
-            make.top.equalTo(onboardImage.snp.bottom).inset(50)
+            make.top.equalTo(onboardImage.snp.bottom).offset(40)
             make.leading.trailing.equalTo(layoutMarginsGuide)
-            make.bottom.equalTo(grantLocationButton.snp.top).inset(40)
+            make.bottom.equalTo(grantLocationButton.snp.top).offset(-50)
         }
     }
 }
 
-
-// SwiftUI Preview
+//MARK: - SwiftUI Preview
 struct OnboardViewRepresentable: UIViewControllerRepresentable {
     func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
         
@@ -128,5 +131,6 @@ struct OnboardViewRepresentable: UIViewControllerRepresentable {
 struct OnboardViewPreview: PreviewProvider {
     static var previews: some View {
         OnboardViewRepresentable()
+//            .previewDevice(.init(rawValue: "iPad (9th generation)"))
     }
 }
