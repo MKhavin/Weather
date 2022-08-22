@@ -20,11 +20,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(windowScene: currentScene)
         
-        let moduleBuilder = ModuleBuilder()
-        
-        let vc = moduleBuilder.assemblySettingsModule()
-//        vc.view.backgroundColor = .red
-        window?.rootViewController = vc
+        let navController = UINavigationController()
+        let appCoordinator = AppCoordinator(moduleBuilder: ModuleBuilder(),
+                                            navigationController: navController)
+        window?.rootViewController = navController
+        appCoordinator.pushSettingsView()
         
         window?.makeKeyAndVisible()
     }

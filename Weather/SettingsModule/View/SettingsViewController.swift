@@ -28,13 +28,17 @@ final class SettingsViewController: UIViewController {
 
         print(FileManager.default.temporaryDirectory)
         // Do any additional setup after loading the view.
-        viewModel = SettingsViewModel()
-        
         setRootViewBackground()
         
         view.backgroundColor = .systemBackground
         view.addSubview(settingsView)
         setSubviewsLayout()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.isNavigationBarHidden = true
     }
 
     private func setRootViewBackground() {

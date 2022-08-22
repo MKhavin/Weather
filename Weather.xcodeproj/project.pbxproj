@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		51251BCF28B405F3004EDD7D /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51251BCE28B405F3004EDD7D /* ModuleBuilder.swift */; };
+		51251BD128B40F19004EDD7D /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51251BD028B40F19004EDD7D /* AppCoordinator.swift */; };
 		5146CBFC28ACB546005ED1FE /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5146CBFB28ACB546005ED1FE /* SettingsTableViewCell.swift */; };
 		5146CBFF28ACC0E8005ED1FE /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5146CBFE28ACC0E8005ED1FE /* UIViewExtension.swift */; };
 		5146CC0128ACC35F005ED1FE /* SettingsTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5146CC0028ACC35F005ED1FE /* SettingsTableViewCellViewModel.swift */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		51251BCE28B405F3004EDD7D /* ModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
+		51251BD028B40F19004EDD7D /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		5146CBFB28ACB546005ED1FE /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		5146CBFE28ACC0E8005ED1FE /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		5146CC0028ACC35F005ED1FE /* SettingsTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCellViewModel.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				51251BCE28B405F3004EDD7D /* ModuleBuilder.swift */,
+				51251BD028B40F19004EDD7D /* AppCoordinator.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 			files = (
 				5146CBFF28ACC0E8005ED1FE /* UIViewExtension.swift in Sources */,
 				515809CA28AC5BA7003363C4 /* SettingsView.swift in Sources */,
+				51251BD128B40F19004EDD7D /* AppCoordinator.swift in Sources */,
 				51A436DA28AEF7590064F168 /* UIColorExtension.swift in Sources */,
 				51A62ACF28AAD8CE00283E47 /* Weather.xcdatamodeld in Sources */,
 				5146CBFC28ACB546005ED1FE /* SettingsTableViewCell.swift in Sources */,
