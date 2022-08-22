@@ -31,6 +31,7 @@ class SettingsView: UIView {
         let view = UILabel()
         view.text = "Settings"
         view.font = .systemFont(ofSize: 20, weight: .bold)
+        view.textColor = .black
         return view
     }()
     

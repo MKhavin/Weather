@@ -20,7 +20,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(windowScene: currentScene)
         
-        let vc = SettingsViewController()
+        let moduleBuilder = ModuleBuilder()
+        
+        let vc = moduleBuilder.assemblySettingsModule()
 //        vc.view.backgroundColor = .red
         window?.rootViewController = vc
         

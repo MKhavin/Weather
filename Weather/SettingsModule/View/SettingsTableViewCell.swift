@@ -44,6 +44,7 @@ class SettingsTableViewCell: UITableViewCell {
         let view = UISegmentedControl()
         view.backgroundColor = Color.blueBackground
         view.selectedSegmentTintColor = Color.selectedSegmentTintColor
+        view.tintColor = .black
         view.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white],
                                     for: UIControl.State.selected)
         return view

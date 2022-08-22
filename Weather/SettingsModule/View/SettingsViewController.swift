@@ -32,6 +32,7 @@ final class SettingsViewController: UIViewController {
         
         setRootViewBackground()
         
+        view.backgroundColor = .systemBackground
         view.addSubview(settingsView)
         setSubviewsLayout()
     }
@@ -39,11 +40,13 @@ final class SettingsViewController: UIViewController {
     private func setRootViewBackground() {
         let background = UIImageView(image: UIImage(named: "SettingsBackground"))
         background.contentMode = .scaleAspectFill
+        background.clipsToBounds = true
         
         view.addSubview(background)
         
         background.snp.makeConstraints { make in
-            make.edges.equalTo(view.safeAreaLayoutGuide.snp.edges)
+            make.top.equalTo(view.safeAreaLayoutGuide)
+            make.bottom.leading.trailing.equalTo(view)
         }
     }
     
@@ -138,7 +141,7 @@ struct SettingsViewControllerPreview: PreviewProvider {
 //            .previewDevice(.init(rawValue: "iPad (9th generation)"))
         
         SettingsViewControllerRepresentable()
-            .previewDevice(.init(rawValue: "iPhone 8"))
+            .previewDevice(.init(rawValue: "iPhone 13"))
         
 //        SettingsViewControllerRepresentable()
 //            .previewDevice(.init(rawValue: "iPhone SE (1st generation)"))

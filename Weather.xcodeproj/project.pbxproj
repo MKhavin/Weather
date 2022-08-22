@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		51251BCF28B405F3004EDD7D /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51251BCE28B405F3004EDD7D /* ModuleBuilder.swift */; };
 		5146CBFC28ACB546005ED1FE /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5146CBFB28ACB546005ED1FE /* SettingsTableViewCell.swift */; };
 		5146CBFF28ACC0E8005ED1FE /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5146CBFE28ACC0E8005ED1FE /* UIViewExtension.swift */; };
 		5146CC0128ACC35F005ED1FE /* SettingsTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5146CC0028ACC35F005ED1FE /* SettingsTableViewCellViewModel.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		51251BCE28B405F3004EDD7D /* ModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
 		5146CBFB28ACB546005ED1FE /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		5146CBFE28ACC0E8005ED1FE /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		5146CC0028ACC35F005ED1FE /* SettingsTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCellViewModel.swift; sourceTree = "<group>"; };
@@ -61,6 +63,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		51251BCD28B405BC004EDD7D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				51251BCE28B405F3004EDD7D /* ModuleBuilder.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		5146CBFD28ACC0D6005ED1FE /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +147,7 @@
 		51A62AC328AAD8CE00283E47 /* Weather */ = {
 			isa = PBXGroup;
 			children = (
+				51251BCD28B405BC004EDD7D /* Services */,
 				5146CBFD28ACC0D6005ED1FE /* Extensions */,
 				515809D628AC5FE2003363C4 /* GlobalConstants */,
 				515809C028AC57F6003363C4 /* SettingsModule */,
@@ -237,6 +248,7 @@
 				51A62AC528AAD8CE00283E47 /* AppDelegate.swift in Sources */,
 				51A62AC728AAD8CE00283E47 /* SceneDelegate.swift in Sources */,
 				51A436D828AEF6210064F168 /* Color.swift in Sources */,
+				51251BCF28B405F3004EDD7D /* ModuleBuilder.swift in Sources */,
 				515809C528AC583E003363C4 /* SettingsViewController.swift in Sources */,
 				5146CC0128ACC35F005ED1FE /* SettingsTableViewCellViewModel.swift in Sources */,
 				515809CC28AC5CFE003363C4 /* SettingsViewModel.swift in Sources */,
