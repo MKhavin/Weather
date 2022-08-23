@@ -8,7 +8,17 @@
 import UIKit
 import SnapKit
 
-class SettingsView: UIView {
+final class SettingsView: UIView {
+    //MARK: - Sub types and properties
+    private enum LayoutConstants {
+        static let buttonHeight = 40
+        static let buttonXMargins = 50
+        static let titleOffset = 10
+        static let tableTopMargin = 15
+        static let tableBottomMargin = 5
+    }
+    
+    //MARK: - UI Elements
     lazy var settingsTableView: UITableView = {
         let view = UITableView()
         view.register(SettingsTableViewCell.self, forCellReuseIdentifier: CellIdentifiers.settingsCell.rawValue)
@@ -17,7 +27,6 @@ class SettingsView: UIView {
         view.allowsSelection = false
         return view
     }()
-    
     lazy var setUpButton: UIButton = {
         let view = UIButton()
         view.setTitle("Set-up", for: .normal)
@@ -26,7 +35,6 @@ class SettingsView: UIView {
         view.layer.cornerRadius = 10
         return view
     }()
-    
     private lazy var titleLabel: UILabel = {
         let view = UILabel()
         view.text = "Settings"
@@ -35,10 +43,12 @@ class SettingsView: UIView {
         return view
     }()
     
+    //MARK: - LifeCycle
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         backgroundColor = Colors.settingsBackgroundColor
+        layer.cornerRadius = 10
         
         addSubviews([
             titleLabel,
@@ -50,24 +60,25 @@ class SettingsView: UIView {
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: coder)
     }
     
+    //MARK: - Sub methods
     private func setSubviewsLayout() {
         titleLabel.snp.makeConstraints { make in
-            make.leading.trailing.top.equalTo(layoutMarginsGuide).offset(10)
+            make.leading.trailing.top.equalTo(layoutMarginsGuide).offset(LayoutConstants.titleOffset)
         }
         
         setUpButton.snp.makeConstraints { make in
             make.bottom.equalTo(layoutMarginsGuide)
-            make.leading.trailing.equalTo(safeAreaLayoutGuide).inset(50)
-            make.height.equalTo(40)
+            make.leading.trailing.equalTo(safeAreaLayoutGuide).inset(LayoutConstants.buttonXMargins)
+            make.height.equalTo(LayoutConstants.buttonHeight)
         }
         
         settingsTableView.snp.makeConstraints { make in
             make.leading.trailing.equalTo(layoutMarginsGuide)
-            make.bottom.equalTo(setUpButton.snp.top).inset(15)
-            make.top.equalTo(titleLabel.snp.bottom).offset(5)
+            make.bottom.equalTo(setUpButton.snp.top).inset(LayoutConstants.tableTopMargin)
+            make.top.equalTo(titleLabel.snp.bottom).offset(LayoutConstants.tableBottomMargin)
         }
     }
 }

@@ -7,22 +7,22 @@
 
 import UIKit
 import SnapKit
-import SwiftUI
 
 final class SettingsViewController: UIViewController {
+    //MARK: - UI Elements
     private lazy var settingsView: SettingsView = {
         let view = SettingsView()
-        view.settingsTableView.delegate = self
         view.settingsTableView.dataSource = self
         view.setUpButton.addTarget(self,
                                    action: #selector(setUpButtonPressed),
                                    for: .touchUpInside)
-        view.layer.cornerRadius = 10
         return view
     }()
     
+    //MARK: - Sub properties
     var viewModel: SettingsViewModelProtocol!
     
+    //MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,7 +30,6 @@ final class SettingsViewController: UIViewController {
         // Do any additional setup after loading the view.
         setRootViewBackground()
         
-        view.backgroundColor = .systemBackground
         view.addSubview(settingsView)
         setSubviewsLayout()
     }
@@ -40,8 +39,20 @@ final class SettingsViewController: UIViewController {
         
         navigationController?.isNavigationBarHidden = true
     }
+    
+    override func updateViewConstraints() {
+        settingsView.snp.updateConstraints { make in
+            make.width.equalTo(view.frame.width / 1.3)
+            make.height.equalTo(view.frame.height / 2)
+        }
+        
+        super.updateViewConstraints()
+    }
 
+    //MARK: - Sub methods
     private func setRootViewBackground() {
+        view.backgroundColor = .systemBackground
+        
         let background = UIImageView(image: UIImage(named: "SettingsBackground"))
         background.contentMode = .scaleAspectFill
         background.clipsToBounds = true
@@ -61,23 +72,15 @@ final class SettingsViewController: UIViewController {
             make.height.equalTo(view.frame.height / 2)
         }
     }
-    
-    override func updateViewConstraints() {
-        settingsView.snp.updateConstraints { make in
-            make.width.equalTo(view.frame.width / 1.3)
-            make.height.equalTo(view.frame.height / 2)
-        }
-        
-        super.updateViewConstraints()
-    }
-    
+
+    //MARK: - Actions
     @objc private func setUpButtonPressed(_ sender: UIButton) {
         viewModel.saveSettings {
             let alert = UIAlertController(title: "Settings",
-                                          message: "Settings succesfully saved",
+                                          message: "Settings was succesfully saved",
                                           preferredStyle: .alert)
             
-            let action = UIAlertAction(title: "Ok", style: .default) { action in
+            let action = UIAlertAction(title: "OK", style: .default) { action in
                 self.dismiss(animated: true)
             }
             
@@ -87,7 +90,7 @@ final class SettingsViewController: UIViewController {
         }
     }
     
-    @objc private func cellValueChanged(_ sender: UISegmentedControl) {
+    @objc private func segmentedControlValueChanged(_ sender: UISegmentedControl) {
         var superview = sender.superview
         while let view = superview, !(view is UITableViewCell) {
             superview = view.superview
@@ -101,13 +104,13 @@ final class SettingsViewController: UIViewController {
     }
 }
 
+//MARK: - UITableView Data Source
 extension SettingsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         viewModel.numberOfRowsInSection()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.settingsCell.rawValue,
                                                  for: indexPath)
         
@@ -117,37 +120,8 @@ extension SettingsViewController: UITableViewDataSource {
         
         currentCell.configureCell(by: indexPath.row)
         currentCell.valueSegmentedControl.addTarget(self,
-                                                    action: #selector(cellValueChanged),
+                                                    action: #selector(segmentedControlValueChanged),
                                                     for: .valueChanged)
         return currentCell
-    }
-}
-
-extension SettingsViewController: UITableViewDelegate {
-}
-
-
-// SwiftUI Preview
-struct SettingsViewControllerRepresentable: UIViewControllerRepresentable {
-    func updateUIViewController(_ uiViewController: SettingsViewController, context: Context) {
-        
-    }
-    
-    func makeUIViewController(context: Context) -> SettingsViewController {
-        let controller = SettingsViewController()
-        return controller
-    }
-}
-
-struct SettingsViewControllerPreview: PreviewProvider {
-    static var previews: some View {
-//        SettingsViewControllerRepresentable()
-//            .previewDevice(.init(rawValue: "iPad (9th generation)"))
-        
-        SettingsViewControllerRepresentable()
-            .previewDevice(.init(rawValue: "iPhone 13"))
-        
-//        SettingsViewControllerRepresentable()
-//            .previewDevice(.init(rawValue: "iPhone SE (1st generation)"))
     }
 }

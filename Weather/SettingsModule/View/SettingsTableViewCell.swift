@@ -6,13 +6,13 @@
 //
 
 import UIKit
-import SwiftUI
 import SnapKit
 
-class SettingsTableViewCell: UITableViewCell {
+final class SettingsTableViewCell: UITableViewCell {
     //MARK: - Sub types and properties
     private enum LayoutConstants {
         static let offset = 10
+        static let segmentedControlWidth = 80
     }
     
     var viewModel: SettingsTableViewCellViewModelProtocol! {
@@ -76,7 +76,7 @@ class SettingsTableViewCell: UITableViewCell {
         valueSegmentedControl.snp.makeConstraints { make in
             make.centerY.equalTo(safeAreaLayoutGuide.snp.centerY)
             make.trailing.equalTo(safeAreaLayoutGuide.snp.trailing).inset(LayoutConstants.offset)
-            make.width.equalTo(80)
+            make.width.equalTo(LayoutConstants.segmentedControlWidth)
         }
     }
     
@@ -88,34 +88,5 @@ class SettingsTableViewCell: UITableViewCell {
     func setSettingsNewValue() {
         let value = valueSegmentedControl.selectedSegmentIndex
         viewModel.setSettings(newValue: value)
-    }
-}
-
-// SwiftUI Preview
-struct SettingsCellViewRepresentable: UIViewControllerRepresentable {
-    func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
-        
-    }
-    
-    func makeUIViewController(context: Context) -> UIViewController {
-        let controller = UIViewController()
-        controller.view.backgroundColor = .white
-       
-        let cell = SettingsTableViewCell()
-        controller.view.addSubview(cell)
-        cell.frame = cell.superview?.frame ?? .zero
-        cell.configureCell(by: 0)
-        cell.backgroundColor = UIColor(red: 233/255.0,
-                                       green: 238/255.0,
-                                       blue: 250/255.0,
-                                       alpha: 1)
-        
-        return controller
-    }
-}
-
-struct Preview: PreviewProvider {
-    static var previews: some View {
-        SettingsCellViewRepresentable()
     }
 }
