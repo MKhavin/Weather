@@ -7,13 +7,13 @@
 
 import Foundation
 
-enum SettingsProperty: String, CaseIterable {
+enum SettingsProperties: String, CaseIterable {
     case temperature = "Temperature"
     case windSpeed = "Wind speed"
     case timeFormat = "Time format"
     case push = "Push"
     
-    enum SettingValue: String {
+    enum SettingValues: String {
         case celsius = "C"
         case farenheit = "F"
         case miles = "Mi"
@@ -29,23 +29,23 @@ enum SettingsProperty: String, CaseIterable {
             
         case .temperature:
             return [
-                SettingValue.celsius.rawValue,
-                SettingValue.farenheit.rawValue
+                SettingValues.celsius.rawValue,
+                SettingValues.farenheit.rawValue
             ]
         case .windSpeed:
             return [
-                SettingValue.miles.rawValue,
-                SettingValue.kilometres.rawValue
+                SettingValues.miles.rawValue,
+                SettingValues.kilometres.rawValue
             ]
         case .timeFormat:
             return [
-                SettingValue.twelve.rawValue,
-                SettingValue.twentyFour.rawValue
+                SettingValues.twelve.rawValue,
+                SettingValues.twentyFour.rawValue
             ]
         case .push:
             return [
-                SettingValue.on.rawValue,
-                SettingValue.off.rawValue
+                SettingValues.on.rawValue,
+                SettingValues.off.rawValue
             ]
         }
     }

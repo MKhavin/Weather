@@ -8,7 +8,7 @@
 import Foundation
 
 struct SettingData {
-    let setting: SettingsProperty
+    let setting: SettingsProperties
     let values: [String]
     var currentValue: Int {
         let value = SettingsManager.shared.getValue(of: setting)

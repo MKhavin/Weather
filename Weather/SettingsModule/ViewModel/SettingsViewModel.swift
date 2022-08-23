@@ -27,6 +27,6 @@ class SettingsViewModel: SettingsViewModelProtocol {
     }
     
     func numberOfRowsInSection() -> Int {
-        SettingsProperty.allCases.count
+        SettingsProperties.allCases.count
     }
 }

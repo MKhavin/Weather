@@ -8,8 +8,8 @@
 import Foundation
 
 protocol SettingsManagerProtocol {
-    func set(value: String, of setting: SettingsProperty)
-    func getValue(of setting: SettingsProperty) -> String?
+    func set(value: String, of setting: SettingsProperties)
+    func getValue(of setting: SettingsProperties) -> String?
     func getData(of settingIndex: Int) -> SettingData
     func saveSettings()
     static var shared: SettingsManagerProtocol { get }
@@ -23,7 +23,7 @@ class SettingsManager: SettingsManagerProtocol {
         if let savedSettings = UserDefaults.standard.dictionary(forKey: "UserSettings") {
             settings = savedSettings
         } else {
-            SettingsProperty.allCases.forEach { setting in
+            SettingsProperties.allCases.forEach { setting in
                 self.settings[setting.rawValue] = setting.getSettingValues()[0]
             }
             
@@ -31,16 +31,16 @@ class SettingsManager: SettingsManagerProtocol {
         }
     }
     
-    func set(value: String, of settings: SettingsProperty) {
+    func set(value: String, of settings: SettingsProperties) {
         self.settings[settings.rawValue] = value
     }
     
-    func getValue(of setting: SettingsProperty) -> String? {
+    func getValue(of setting: SettingsProperties) -> String? {
         return settings[setting.rawValue] as? String
     }
     
     func getData(of settingIndex: Int) -> SettingData {
-        let setting = SettingsProperty.allCases[settingIndex]
+        let setting = SettingsProperties.allCases[settingIndex]
         let values = setting.getSettingValues()
         
         return SettingData(setting: setting, values: values)

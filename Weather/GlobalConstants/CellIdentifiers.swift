@@ -7,6 +7,6 @@
 
 import Foundation
 
-enum CellIdentifier: String {
+enum CellIdentifiers: String {
     case settingsCell = "SettingsCell"
 }

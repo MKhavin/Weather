@@ -11,7 +11,7 @@ import SnapKit
 class SettingsView: UIView {
     lazy var settingsTableView: UITableView = {
         let view = UITableView()
-        view.register(SettingsTableViewCell.self, forCellReuseIdentifier: CellIdentifier.settingsCell.rawValue)
+        view.register(SettingsTableViewCell.self, forCellReuseIdentifier: CellIdentifiers.settingsCell.rawValue)
         view.backgroundColor = .clear
         view.separatorStyle = .none
         view.allowsSelection = false
@@ -22,7 +22,7 @@ class SettingsView: UIView {
         let view = UIButton()
         view.setTitle("Set-up", for: .normal)
         view.setTitleColor(UIColor.white, for: .normal)
-        view.backgroundColor = Color.buttonColor
+        view.backgroundColor = Colors.buttonColor
         view.layer.cornerRadius = 10
         return view
     }()
@@ -38,7 +38,7 @@ class SettingsView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        backgroundColor = Color.settingsBackgroundColor
+        backgroundColor = Colors.settingsBackgroundColor
         
         addSubviews([
             titleLabel,

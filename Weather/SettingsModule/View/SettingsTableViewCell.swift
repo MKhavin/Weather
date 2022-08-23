@@ -11,7 +11,7 @@ import SnapKit
 
 class SettingsTableViewCell: UITableViewCell {
     //MARK: - Sub types and properties
-    private enum LayoutConstant {
+    private enum LayoutConstants {
         static let offset = 10
     }
     
@@ -42,8 +42,8 @@ class SettingsTableViewCell: UITableViewCell {
     }()
     lazy var valueSegmentedControl: UISegmentedControl = {
         let view = UISegmentedControl()
-        view.backgroundColor = Color.blueBackground
-        view.selectedSegmentTintColor = Color.selectedSegmentTintColor
+        view.backgroundColor = Colors.blueBackground
+        view.selectedSegmentTintColor = Colors.selectedSegmentTintColor
         view.tintColor = .black
         view.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white],
                                     for: UIControl.State.selected)
@@ -70,12 +70,12 @@ class SettingsTableViewCell: UITableViewCell {
     private func setSubviewsLayout() {
         titleLabel.snp.makeConstraints { make in
             make.centerY.equalTo(safeAreaLayoutGuide.snp.centerY)
-            make.leading.equalTo(safeAreaLayoutGuide.snp.leading).offset(LayoutConstant.offset)
+            make.leading.equalTo(safeAreaLayoutGuide.snp.leading).offset(LayoutConstants.offset)
         }
         
         valueSegmentedControl.snp.makeConstraints { make in
             make.centerY.equalTo(safeAreaLayoutGuide.snp.centerY)
-            make.trailing.equalTo(safeAreaLayoutGuide.snp.trailing).inset(LayoutConstant.offset)
+            make.trailing.equalTo(safeAreaLayoutGuide.snp.trailing).inset(LayoutConstants.offset)
             make.width.equalTo(80)
         }
     }
