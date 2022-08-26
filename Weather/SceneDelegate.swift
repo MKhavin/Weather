@@ -20,12 +20,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(windowScene: currentScene)
         
-        let navController = UINavigationController()
-        let appCoordinator = AppCoordinator(moduleBuilder: ModuleBuilder(),
-                                            navigationController: navController)
-        window?.rootViewController = navController
-        appCoordinator.pushSettingsView()
+//        let navController = UINavigationController()
+//        let appCoordinator = AppCoordinator(moduleBuilder: ModuleBuilder(),
+//                                            navigationController: navController)
+//        window?.rootViewController = navController
+//        appCoordinator.pushSettingsView()
         
+        let test = UIViewController()
+        test.view = CurrentWeatherCollectionViewCell()
+        window?.rootViewController = test
         window?.makeKeyAndVisible()
     }
 
