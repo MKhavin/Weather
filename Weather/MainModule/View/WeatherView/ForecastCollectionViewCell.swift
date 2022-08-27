@@ -13,9 +13,11 @@ class ForecastCollectionViewCell: UICollectionViewCell {
     //MARK: - UI Elements
     private lazy var timeLabel: UILabel = {
         let view = UILabel()
-        view.textColor = .lightGray
+        view.textColor = .black
         view.textAlignment = .center
         view.text = "14:00"
+        view.adjustsFontSizeToFitWidth = true
+        view.minimumScaleFactor = 0.2
         return view
     }()
     private lazy var tempLabel: UILabel = {
@@ -23,6 +25,7 @@ class ForecastCollectionViewCell: UICollectionViewCell {
         view.textColor = .black
         view.text = "7+"
         view.textAlignment = .center
+        view.font = timeLabel.font
         return view
     }()
     private lazy var weatherImageView: UIImageView = {
@@ -34,7 +37,9 @@ class ForecastCollectionViewCell: UICollectionViewCell {
     //MARK: - Sub properties
     override var isSelected: Bool {
         didSet {
-            contentView.backgroundColor = isSelected ? Colors.blueBackground : .white
+            contentView.backgroundColor = isSelected ? Colors.selectedSegmentTintColor : .white
+            timeLabel.textColor = isSelected ? .white : .black
+            tempLabel.textColor = isSelected ? .white : .black
         }
     }
     
@@ -72,36 +77,10 @@ class ForecastCollectionViewCell: UICollectionViewCell {
     
     private func setCellAppearance() {
         backgroundColor = .white
-        
-        let corners = UIRectCorner(arrayLiteral: [.allCorners])
-        let cornersPath = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: 50, height: 50))
-        
-        let maskLayer = CAShapeLayer()
-        maskLayer.path = cornersPath.cgPath
-        
-        layer.mask = maskLayer
-        
-        layer.borderWidth = 2
+        layer.cornerRadius = bounds.width / 2
+        layer.borderWidth = 1
         layer.borderColor = UIColor.black.cgColor
-    }
-}
-
-
-struct Container: UIViewControllerRepresentable {
-    func makeUIViewController(context: Context) -> UIViewController {
-        let controller = UIViewController()
-        let view = ForecastCollectionViewCell(frame: CGRect(x: 150, y: 200, width: 80, height: 150))
-        controller.view.addSubview(view)
-        return controller
+        clipsToBounds = true
     }
     
-    func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
-        
-    }
-}
-
-struct Preview: PreviewProvider {
-    static var previews: some View {
-        Container()
-    }
 }

@@ -8,13 +8,13 @@
 import UIKit
 
 class CurrentWeatherItem: UIStackView {
+    //MARK: - UI elements
     private lazy var weatherImage: UIImageView = {
         let view = UIImageView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
         view.image = UIImage(named: "wind")
         view.contentMode = .scaleAspectFit
         return view
     }()
-    
     private lazy var imageTitle: UILabel = {
         let view = UILabel()
         view.textColor = .white
@@ -24,21 +24,26 @@ class CurrentWeatherItem: UIStackView {
         return view
     }()
     
+    //MARK: - Life cycle
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        setViewAppearance()
         addArrangedSubviews([
             weatherImage,
             imageTitle
         ])
-        
-        axis = .horizontal
-        distribution = .fill
-        spacing = 5
-        alignment = .center
     }
     
     required init(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    //MARK: - Sub methods
+    private func setViewAppearance() {
+        axis = .horizontal
+        distribution = .fill
+        spacing = 5
+        alignment = .center
     }
 }

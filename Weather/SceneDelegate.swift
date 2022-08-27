@@ -25,10 +25,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //                                            navigationController: navController)
 //        window?.rootViewController = navController
 //        appCoordinator.pushSettingsView()
+        window?.rootViewController = MainViewController()
         
-        let test = UIViewController()
-        test.view = CurrentWeatherCollectionViewCell()
-        window?.rootViewController = test
         window?.makeKeyAndVisible()
     }
 

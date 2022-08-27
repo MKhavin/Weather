@@ -9,4 +9,7 @@ import Foundation
 
 enum CellIdentifiers: String {
     case settingsCell = "SettingsCell"
+    case forecastCell = "ForecastCell"
+    case forecastDailyCell = "ForecastDailyCell"
+    case weatherCell = "WeatherCell"
 }

@@ -10,12 +10,12 @@ import SnapKit
 import SwiftUI
 
 class ForecastDailyTableViewCell: UITableViewCell {
+    //MARK: - UI elements
     private lazy var tempLabel: UILabel = {
         let view = UILabel()
         view.text = "7-10"
         return view
     }()
-    
     private lazy var descriptionLabel: UILabel = {
         let view = UILabel()
         view.text = "Облачно"
@@ -23,31 +23,23 @@ class ForecastDailyTableViewCell: UITableViewCell {
         view.numberOfLines = 1
         return view
     }()
-    
-    private lazy var weatherImage: UIImageView = {
-        let view = UIImageView(image: UIImage(named: "sun"))
-        view.contentMode = .scaleAspectFit
-        return view
-    }()
-    
-    private lazy var humidityLabel: UILabel = {
-        let view = UILabel()
-        view.textColor = .blue
-        view.text = "57%"
-        return view
-    }()
-    
     private lazy var dateLabel: UILabel = {
         let view = UILabel()
         view.textColor = .lightGray
         view.text = "17/28"
         return view
     }()
+    private lazy var humidityInfo = HumidityInfoView()
     
+    //MARK: - Life cycle
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
+        clipsToBounds = true
         backgroundColor = Colors.tableCellBackground
+        accessoryType = .disclosureIndicator
+        layer.cornerRadius = 10
+        
         setSubviewsLayout()
     }
     
@@ -55,28 +47,16 @@ class ForecastDailyTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func getHumidityStack() -> UIStackView {
-        let horizontalStackView = UIStackView(arrangedSubviews: [
-            weatherImage,
-            humidityLabel
-        ])
-        horizontalStackView.distribution = .fillEqually
-        horizontalStackView.axis = .horizontal
-        horizontalStackView.alignment = .fill
-        horizontalStackView.spacing = 5
-        
-        return horizontalStackView
-    }
-    
+    //MARK: - Sub methods
     private func getDateAndHumidityStack() -> UIStackView {
         let verticalStackView = UIStackView(arrangedSubviews: [
             dateLabel,
-            getHumidityStack()
+            humidityInfo
         ])
         
         verticalStackView.axis = .vertical
         verticalStackView.spacing = 2
-        verticalStackView.distribution = .fillEqually
+        verticalStackView.distribution = .equalSpacing
         verticalStackView.alignment = .center
         
         return verticalStackView
@@ -92,43 +72,24 @@ class ForecastDailyTableViewCell: UITableViewCell {
         ])
         
         dateAndHumidityStack.snp.makeConstraints { make in
-            make.width.equalTo(contentView.frame.width / 4)
+            make.width.equalTo(contentView.frame.width / 6)
             make.top.bottom.leading.equalTo(layoutMargins)
         }
         
         tempLabel.snp.makeConstraints { make in
             make.trailing.top.bottom.equalTo(layoutMarginsGuide)
-            make.width.equalTo(contentView.frame.width / 3)
+            make.width.equalTo(contentView.frame.width / 5)
         }
 
         descriptionLabel.snp.makeConstraints { make in
             make.top.bottom.equalTo(layoutMargins)
-            make.leading.equalTo(dateAndHumidityStack.snp.trailing).offset(5)
-            make.trailing.equalTo(tempLabel.snp.leading).inset(5)
+            make.leading.equalTo(dateAndHumidityStack.snp.trailing).offset(10)
+            make.trailing.equalTo(tempLabel.snp.leading).inset(-10)
         }
     }
     
     private func configureCell() {
-        contentView.addSubview(tempLabel)
-        accessoryType = .disclosureIndicator
-    }
-}
-
-struct ContainerTwo: UIViewControllerRepresentable {
-    func makeUIViewController(context: Context) -> UIViewController {
-        let controller = UIViewController()
-        let view = ForecastDailyTableViewCell(frame: CGRect(x: 0, y: 500, width: 400, height: 400))
-        controller.view.addSubview(view)
-        return controller
-    }
-    
-    func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
-        
-    }
-}
-
-struct PreviewTwo: PreviewProvider {
-    static var previews: some View {
-        ContainerTwo()
+//        contentView.addSubview(tempLabel)
+//        accessoryType = .disclosureIndicator
     }
 }
