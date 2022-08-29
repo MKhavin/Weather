@@ -45,6 +45,7 @@
 		51CF8C4B28B7B785006677D3 /* CurrentWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CF8C4A28B7B785006677D3 /* CurrentWeatherView.swift */; };
 		51CF8C4E28B7B8F3006677D3 /* CurrentWeatherItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CF8C4D28B7B8F3006677D3 /* CurrentWeatherItem.swift */; };
 		51CF8C5028B7BC9A006677D3 /* UIStackViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CF8C4F28B7BC9A006677D3 /* UIStackViewExtension.swift */; };
+		51D04F4828BD5A2E0032DD38 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D04F4728BD5A2E0032DD38 /* MainViewModel.swift */; };
 		51F0D48228BA9921000CF520 /* CurrentWeatherInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F0D48128BA9921000CF520 /* CurrentWeatherInfoView.swift */; };
 /* End PBXBuildFile section */
 
@@ -88,6 +89,7 @@
 		51CF8C4A28B7B785006677D3 /* CurrentWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherView.swift; sourceTree = "<group>"; };
 		51CF8C4D28B7B8F3006677D3 /* CurrentWeatherItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherItem.swift; sourceTree = "<group>"; };
 		51CF8C4F28B7BC9A006677D3 /* UIStackViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackViewExtension.swift; sourceTree = "<group>"; };
+		51D04F4728BD5A2E0032DD38 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		51F0D48128BA9921000CF520 /* CurrentWeatherInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherInfoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -219,6 +221,7 @@
 		519AB98728B577D500F545B4 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				51D04F4728BD5A2E0032DD38 /* MainViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -396,6 +399,7 @@
 				5188879428B442C800529219 /* WeatherDescriptionDataModel.swift in Sources */,
 				515809CE28AC5D82003363C4 /* CellIdentifiers.swift in Sources */,
 				5188879E28B4433A00529219 /* SnowDataModel.swift in Sources */,
+				51D04F4828BD5A2E0032DD38 /* MainViewModel.swift in Sources */,
 				510FBA3528B94E8400CA1935 /* WeatherCollectionViewCell.swift in Sources */,
 				51A62AC528AAD8CE00283E47 /* AppDelegate.swift in Sources */,
 				51CF8C4B28B7B785006677D3 /* CurrentWeatherView.swift in Sources */,

@@ -32,7 +32,11 @@ struct ModuleBuilder: ModuleBuilderProtocol {
     }
     
     func assemblyMainModule(coordinator: AppCoordinatorProtocol?) -> UIViewController {
-        return UIViewController()
+        let view = MainViewController()
+        let viewModel = MainViewModel(coordinator: coordinator)
+        view.viewModel = viewModel
+        
+        return view
     }
     
     func assemblyDayPerHourForecastModule(coordinator: AppCoordinatorProtocol?) -> UIViewController {

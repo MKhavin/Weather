@@ -10,6 +10,9 @@ import SwiftUI
 import SnapKit
 
 class MainViewController: UIViewController {
+    //MARK: - Sub properties
+    var viewModel: MainViewModelProtocol!
+    
     //MARK: - UI Elements
     private lazy var weatherCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -46,8 +49,10 @@ class MainViewController: UIViewController {
             pageControl
         ])
         setSubviewsLayout()
+        setNavigationBar()
     }
 
+    //MARK: - Sub methods
     private func setSubviewsLayout() {
         pageControl.snp.makeConstraints { make in
             make.centerX.top.equalTo(view.layoutMarginsGuide)
@@ -59,11 +64,36 @@ class MainViewController: UIViewController {
         }
     }
     
+    private func setNavigationBar() {
+        let settingsButton = UIBarButtonItem(image: UIImage(systemName: "gearshape"),
+                                             style: .plain,
+                                             target: self,
+                                             action: #selector(pushSettingsView(_:)))
+        settingsButton.tintColor = .black
+        
+        let currentLocation = UIBarButtonItem(image: UIImage(systemName: "location.circle"),
+                                              style: .plain,
+                                              target: self,
+                                              action: #selector(getCurrentLocationWeather(_:)))
+        currentLocation.tintColor = .black
+        
+        navigationItem.leftBarButtonItem = settingsButton
+        navigationItem.rightBarButtonItem = currentLocation
+    }
+    
     //MARK: - Actions
     @objc private func pageDidChanged(_ sender: UIPageControl) {
         let currentPage = CGFloat(sender.currentPage)
         weatherCollectionView.setContentOffset(CGPoint(x: currentPage * weatherCollectionView.frame.width, y: 0),
                                                animated: true)
+    }
+                                             
+    @objc private func pushSettingsView(_ sender: UIBarButtonItem) {
+        viewModel.pushSettingsView()
+    }
+    
+    @objc private func getCurrentLocationWeather(_ sender: UIBarButtonItem) {
+        
     }
 }
 
@@ -87,7 +117,7 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let currentPage = scrollView.contentOffset.x / scrollView.frame.width
+        let currentPage = scrollView.contentOffset.x / (scrollView.frame.width == 0 ? 1 : scrollView.frame.width)
         pageControl.currentPage = Int(currentPage)
     }
 }
@@ -160,7 +190,7 @@ extension MainViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        tableView.bounds.height / 4
+        tableView.bounds.height / 3
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

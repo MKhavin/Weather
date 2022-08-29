@@ -11,7 +11,7 @@ import UIKit
 protocol AppCoordinatorProtocol {
     var navigationController: UINavigationController { get }
     var moduleBuilder: ModuleBuilderProtocol { get }
-    func pushMainView()
+    func pushInitialView()
     func pushSettingsView()
     func popToRoot()
     func pushOnboardView()
@@ -28,8 +28,9 @@ class AppCoordinator: AppCoordinatorProtocol {
         self.navigationController = navigationController
     }
     
-    func pushMainView() {
-        
+    func pushInitialView() {
+        let view = moduleBuilder.assemblyMainModule(coordinator: self)
+        navigationController.viewControllers = [view]
     }
     
     func pushSettingsView() {
