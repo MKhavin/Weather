@@ -41,6 +41,7 @@
 		51A62AD128AAD8D100283E47 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51A62AD028AAD8D100283E47 /* Assets.xcassets */; };
 		51A62AD428AAD8D100283E47 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51A62AD228AAD8D100283E47 /* LaunchScreen.storyboard */; };
 		51C8575028BAA3F3002A6C11 /* HumidityInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C8574F28BAA3F3002A6C11 /* HumidityInfoView.swift */; };
+		51C8575428BAB2F2002A6C11 /* CustomPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C8575328BAB2F2002A6C11 /* CustomPageControl.swift */; };
 		51CF8C4B28B7B785006677D3 /* CurrentWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CF8C4A28B7B785006677D3 /* CurrentWeatherView.swift */; };
 		51CF8C4E28B7B8F3006677D3 /* CurrentWeatherItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CF8C4D28B7B8F3006677D3 /* CurrentWeatherItem.swift */; };
 		51CF8C5028B7BC9A006677D3 /* UIStackViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CF8C4F28B7BC9A006677D3 /* UIStackViewExtension.swift */; };
@@ -83,6 +84,7 @@
 		51A62AD328AAD8D100283E47 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		51A62AD528AAD8D100283E47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		51C8574F28BAA3F3002A6C11 /* HumidityInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumidityInfoView.swift; sourceTree = "<group>"; };
+		51C8575328BAB2F2002A6C11 /* CustomPageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPageControl.swift; sourceTree = "<group>"; };
 		51CF8C4A28B7B785006677D3 /* CurrentWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherView.swift; sourceTree = "<group>"; };
 		51CF8C4D28B7B8F3006677D3 /* CurrentWeatherItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherItem.swift; sourceTree = "<group>"; };
 		51CF8C4F28B7BC9A006677D3 /* UIStackViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackViewExtension.swift; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 		51A62AC328AAD8CE00283E47 /* Weather */ = {
 			isa = PBXGroup;
 			children = (
+				51D04F4628BD59D00032DD38 /* CustomUIElements */,
 				51251BCD28B405BC004EDD7D /* Services */,
 				5146CBFD28ACC0D6005ED1FE /* Extensions */,
 				515809D628AC5FE2003363C4 /* GlobalConstants */,
@@ -279,6 +282,14 @@
 				51F0D48128BA9921000CF520 /* CurrentWeatherInfoView.swift */,
 			);
 			path = CurrentWeatherView;
+			sourceTree = "<group>";
+		};
+		51D04F4628BD59D00032DD38 /* CustomUIElements */ = {
+			isa = PBXGroup;
+			children = (
+				51C8575328BAB2F2002A6C11 /* CustomPageControl.swift */,
+			);
+			path = CustomUIElements;
 			sourceTree = "<group>";
 		};
 		51F0D48328BAA010000CF520 /* ForecastTableViewCell */ = {
@@ -401,6 +412,7 @@
 				5188879C28B4432700529219 /* RainDataModel.swift in Sources */,
 				515809CC28AC5CFE003363C4 /* SettingsViewModel.swift in Sources */,
 				515809D228AC5E73003363C4 /* SettingsManager.swift in Sources */,
+				51C8575428BAB2F2002A6C11 /* CustomPageControl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

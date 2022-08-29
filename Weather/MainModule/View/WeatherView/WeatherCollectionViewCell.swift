@@ -23,12 +23,18 @@ class WeatherCollectionViewCell: UICollectionViewCell {
         
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
         view.register(ForecastCollectionViewCell.self, forCellWithReuseIdentifier: CellIdentifiers.forecastCell.rawValue)
+        view.backgroundColor = .white
         return view
     }()
     private(set) lazy var forecastDailyTableView: UITableView = {
         let view = UITableView()
         view.register(ForecastDailyTableViewCell.self, forCellReuseIdentifier: CellIdentifiers.forecastDailyCell.rawValue)
         view.separatorStyle = .none
+        
+        if #available(iOS 15.0, *) {
+            view.sectionHeaderTopPadding = 0
+        }
+        
         return view
     }()
     private(set) lazy var forecastDetailsButton: UIButton = {
@@ -81,6 +87,8 @@ class WeatherCollectionViewCell: UICollectionViewCell {
             tableButton,
             tableTitleLabel
         ])
+        
+        backgroundColor = .white
         
         setSubviewsLayout()
     }

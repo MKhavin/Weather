@@ -25,14 +25,12 @@ class MainViewController: UIViewController {
         
         return view
     }()
-    private lazy var pageControl: UIPageControl = {
-        let view = UIPageControl()
+    private lazy var pageControl: CustomPageControl = {
+        let view = CustomPageControl()
         view.numberOfPages = 2
-//        view.backgroundStyle = .minimal
         view.currentPage = 0
-//        view.backgroundColor = .black
         view.currentPageIndicatorTintColor = .black
-        view.pageIndicatorTintColor = .white
+        view.pageIndicatorTintColor = .black
         view.addTarget(self, action: #selector(pageDidChanged(_:)), for: .valueChanged)
         return view
     }()
@@ -91,7 +89,6 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let currentPage = scrollView.contentOffset.x / scrollView.frame.width
         pageControl.currentPage = Int(currentPage)
-        
     }
 }
 
@@ -127,7 +124,7 @@ extension MainViewController: UICollectionViewDataSource {
     }
 }
 
-//MARK: - UITableView delegate
+//MARK: - UITableView data source
 extension MainViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         1
@@ -146,21 +143,13 @@ extension MainViewController: UITableViewDataSource {
     }
 }
 
-//MARK: - UITableView data source
+//MARK: - UITableView delegate
 extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if section == 0 {
             return 0
         } else {
-            return 2
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
-        if section == 0 {
-            return 0
-        } else {
-            return 2
+            return 5
         }
     }
 
@@ -172,5 +161,9 @@ extension MainViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         tableView.bounds.height / 4
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
