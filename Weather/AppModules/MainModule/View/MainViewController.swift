@@ -65,7 +65,7 @@ class MainViewController: UIViewController {
     }
     
     private func setNavigationBar() {
-        let settingsButton = UIBarButtonItem(image: UIImage(systemName: "gearshape"),
+        let settingsButton = UIBarButtonItem(image: UIImage(systemName: "gear"),
                                              style: .plain,
                                              target: self,
                                              action: #selector(pushSettingsView(_:)))
@@ -93,7 +93,7 @@ class MainViewController: UIViewController {
     }
     
     @objc private func getCurrentLocationWeather(_ sender: UIBarButtonItem) {
-        
+        viewModel.getCurrentLocationWeather()
     }
 }
 

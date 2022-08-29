@@ -43,7 +43,8 @@ class AppCoordinator: AppCoordinatorProtocol {
     }
     
     func pushOnboardView() {
-        
+        let view = moduleBuilder.assemblyOnboardModule(coordinator: self)
+        navigationController.pushViewController(view, animated: true)
     }
     
     func pushDayPerHourForecastView() {

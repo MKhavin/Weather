@@ -28,7 +28,12 @@ struct ModuleBuilder: ModuleBuilderProtocol {
     }
     
     func assemblyOnboardModule(coordinator: AppCoordinatorProtocol?) -> UIViewController {
-        return UIViewController()
+        let view = OnboardViewController()
+        let locationManager = LocationManager()
+        let viewModel = OnboardViewModel(manager: locationManager, coordinator: coordinator)
+        view.viewModel = viewModel
+        
+        return view
     }
     
     func assemblyMainModule(coordinator: AppCoordinatorProtocol?) -> UIViewController {
